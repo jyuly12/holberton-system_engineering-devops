@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chgrp olleh hello
+sudo -href olleh hello
