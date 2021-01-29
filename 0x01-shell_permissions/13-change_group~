@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo chmod ugo+751 mkdir-holberton
