@@ -1,3 +1,2 @@
 B#!/bin/bash
-sudo chown :betty holberton *
-
+sudo chown :betty holberton 
