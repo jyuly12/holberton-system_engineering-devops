@@ -1,2 +1,2 @@
 #!/bin/bash
-echo {a..z}{a..z}|ls -l|  
+printf '%s\n' {a..z}{a..z}|grep -v "oo"
