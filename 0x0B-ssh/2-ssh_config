@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# SSH configuration file for the local SSH client.
+
+Host 98.98.98.98
+     User ubuntu
+     Port 22
+     PasswordAuthentication no
+     IdentityFile ~/.ssh/holberton
+     BatchMode yes
