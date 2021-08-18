@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Run Apache whit Docker
+
+sudo apt-get install apache2
+service apache2 start
