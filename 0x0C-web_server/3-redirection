@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Install Nginx on own server
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo ufw allow "Nginx HTTP"
+sudo service nginx start
+sed -i "/listen 80 default_server;\n\trewrite ^/redirect_me https://github.com/jyuly12 permanent;/" /etc/nginx/sites-available/default
