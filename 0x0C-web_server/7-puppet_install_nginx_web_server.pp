@@ -6,9 +6,6 @@ exec {'Update and Upgrade':
 package {'nginx':
   ensure  => 'installed'
 }
-exec { 'permissions':
-  command => 'sudo ufw allow "Nginx HTTP"'
-}
 service {'start nginx':
   ensure  => running,
   require => Package['nginx'],
@@ -20,6 +17,6 @@ file_line { 'Add redirection, 301':
   path   => '/etc/nginx/sites-available/default',
   ensure => 'present',
   after  => 'listen 80 default_server',
-  line   => 'rewrite ^/redirect_me https:// permanent;'
+  line   => 'rewrite ^/redirect_me https://github.com/jyuly12 permanent;'
 }
 
