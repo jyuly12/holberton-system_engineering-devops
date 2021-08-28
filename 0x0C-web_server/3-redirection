@@ -3,5 +3,7 @@
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sed -i "/listen 80 default_server;\n\rewrite ^/redirect_me https://github.com/jyuly12 permanent;/" /etc/nginx/sites-available/default
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+NEW="\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com;\n\t}"
+sed -i "/server_name _;/ a\\$NEW" /etc/nginx/sites-available/default
 sudo service nginx restart
