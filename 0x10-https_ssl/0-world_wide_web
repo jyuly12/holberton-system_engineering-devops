@@ -10,7 +10,7 @@ func ()
 
 if [ -z "$2" ]
 then
-	for subdomain in $subdomains
+	for subdomain in ${subdomains[@]}
 	do
     func "$1" "$subdomain"
     done
