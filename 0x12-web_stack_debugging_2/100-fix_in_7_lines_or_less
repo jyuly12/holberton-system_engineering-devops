@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # configures the container to fit the above requirements
-
 pkill apache2
-chmod 777 /etc/nginx/nginx.conf
-sed -i 's/80/8080/g' /etc/nginx/sites-available/default
-sudo -u nginx service nginx start
+sed -i 's/\b80\b/&80/' /etc/nginx/sites-available/default
+chmod 755 /etc/nginx/nginx.conf
+sudo -u nginx bash -c 'service nginx restart'
