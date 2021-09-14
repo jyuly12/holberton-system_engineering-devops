@@ -3,18 +3,19 @@
 This module returns information about his/her TODO list progress.
 """
 
-import requests
+from requests import get
 from sys import argv
 
 if __name__ == '__main__':
+    task_titel = []
     url = "https://jsonplaceholder.typicode.com/"
-    user = requests.get(url + "users/{}".format(argv[1])).json()
-    todos = requests.get(url + "todos", params={"userId": argv[1]}).json()
-    completed = []
+    user = get(url + "users/{}".format(argv[1])).json()
+    todo = get(url + "todos", params={"userId": argv[1]}).json()
 
-    for task in todos:
+    for task in todo:
         if task.get('completed') is True:
-            completed.append(task.get('title'))
+            task_titel.append(task.get('title'))
     print("Employee {} is done with tasks({}/{}):".
-          format(user.get('name'), len(completed), len(todos)))
-    print("\n".join("\t {}".format(task) for task in completed))
+          format(user.get('name'), len(task_titel), len(todo)))
+    for i in task_titel:
+        print("\t {}".format(i))
